@@ -9,14 +9,18 @@ import { AboutComponent } from './about/about.component';
 
 import { PostService } from './post.service'
 
-import { routing } from './app.routing'
+import { routing } from './app.routing';
+import { NewComponent } from './new/new.component';
+import { EditComponent } from './edit/edit.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    AboutComponent
+    AboutComponent,
+    NewComponent,
+    EditComponent
   ],
   imports: [
     routing,
