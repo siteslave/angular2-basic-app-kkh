@@ -6,18 +6,18 @@
 <form>
   <div class="form-group">
     <label>User</label>
-    <select class="form-control">
-      <option>1</option>
+    <select class="form-control" [(ngModel)]="userId" [ngModelOptions]="{standalone: true}">
+      <option *ngFor="let u of users" value="u.id">{{ u.name }}</option>
     </select>
   </div>
   <div class="form-group">
     <label>Title</label>
-    <input type="text" class="form-control" />
+    <input type="text" class="form-control" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" />
   </div>
   <div class="form-group">
     <label>Body</label>
-    <textarea class="form-control" rows="3"></textarea>
+    <textarea class="form-control" rows="3" [(ngModel)]="body" [ngModelOptions]="{standalone: true}"></textarea>
   </div>
   
-  <button type="button" class="btn btn-primary">Post</button>
+  <button type="button" class="btn btn-primary" [disabled]="!userId || !title || !body" (click)="save()">Post</button>
 </form>
